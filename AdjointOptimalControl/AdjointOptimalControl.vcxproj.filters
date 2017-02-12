@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="optimal_control_impl.hpp">
+      <Filter>adjoint_optimal_control</Filter>
+    </ClCompile>
+    <ClCompile Include="ex1_dynamics.cpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClCompile>
+    <ClCompile Include="ex1_finalcost.cpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClCompile>
+    <ClCompile Include="ex1_control.cpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClCompile>
+    <ClCompile Include="ex1_integralcost.cpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="adjoint_optimal_control">
+      <UniqueIdentifier>{060ef051-0b4f-44a5-b21f-4db2f7302528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adjoint_optimal_control\example1">
+      <UniqueIdentifier>{6f0cd17d-55c4-4b49-a2c1-c18e648df75f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="optimal_control.hpp">
+      <Filter>adjoint_optimal_control</Filter>
+    </ClInclude>
+    <ClInclude Include="ex1_control.hpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClInclude>
+    <ClInclude Include="ex1_finalcost.hpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClInclude>
+    <ClInclude Include="ex1_dynamics.hpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClInclude>
+    <ClInclude Include="Hamiltonian.hpp">
+      <Filter>adjoint_optimal_control</Filter>
+    </ClInclude>
+    <ClInclude Include="example1.hpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClInclude>
+    <ClInclude Include="ex1_integralcost.hpp">
+      <Filter>adjoint_optimal_control\example1</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
