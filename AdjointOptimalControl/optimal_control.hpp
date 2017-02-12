@@ -14,9 +14,6 @@ namespace opt {
 			iterative method. This templated class takes in classes
 			that store the Hamiltonian, the Final Cost function, and
 			the Control function.
-
-			The Hamiltonian class will store the dynamics and will have
-			the integral cost contained within it.
 		*/
 		template<class Hamiltonian, class FinalCost, class Control>
 		class adjoint {
@@ -58,11 +55,14 @@ namespace opt {
 			int Nt, num_iters;
 			double t0, tf, step_size, mom_coef;
 
+			// variables for Barzilai-Borwein method
+			vec coef_o, hgradu_o;
+
 			// helper methods
 			void computeAdjointHistory();
 			void computeStateHistory();
 			void computeOverallGradH_u();
-			void updateControlCoefs();
+			void updateControlCoefs(int iteration_num);
 			void updateVec(const vec & v_old, const vec & dv, double multiplier, vec & v_new);
 
 		};

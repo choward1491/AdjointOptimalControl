@@ -17,8 +17,8 @@ int main(int argc, char** argv) {
 	opt_adjoint1 oa1;
 	oa1.setIterationStepsize(1e-1);
 	oa1.setMomentumCoefficient(0.9);
-	oa1.setNumIterations(100000);
-	oa1.setSimVars(0.0, 1.0, x0, 1000);
+	oa1.setNumIterations(2000);
+	oa1.setSimVars(0.0, 1.0, x0, 50);
 	oa1.solve();
 	saveControlHistory1(oa1.U, oa1.getTimeframe());
 

@@ -16,8 +16,8 @@ namespace opt {
 			void grad_x(const double & t, const vec & x, const vec & u, const vec & lambda, vec & Hgrad_x);
 			void grad_u(const double & t, const vec & x, const vec & u, const vec & lambda, vec & Hgrad_u);
 
-			IC L; // integral cost term
-			F f; // dynamics operator
+			IC L;	// integral cost term
+			F f;	// dynamics operator
 
 		private:
 

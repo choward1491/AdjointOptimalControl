@@ -1,4 +1,4 @@
-
+% Author: C. Howard
 % plot results of adjoint solution for the following example problem 1:
 %
 % dynamics:
