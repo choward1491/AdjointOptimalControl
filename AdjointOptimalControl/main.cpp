@@ -17,8 +17,8 @@ int main(int argc, char** argv) {
 	opt_adjoint1 oa1;
 	oa1.setIterationStepsize(1e-1);
 	oa1.setMomentumCoefficient(0.9);
-	oa1.setNumIterations(10000);
-	oa1.setSimVars(0.0, 1.0, x0, 100);
+	oa1.setNumIterations(100000);
+	oa1.setSimVars(0.0, 1.0, x0, 1000);
 	oa1.solve();
 	saveControlHistory1(oa1.U, oa1.getTimeframe());
 
@@ -29,7 +29,7 @@ void saveControlHistory1(ex1::control & U, const opt::control::vec & timeframe)
 {
 	opt::control::vec x(1, 0.0);
 	opt::control::vec u(U.size_u(), 0.0);
-	FILE* fptr = fopen("control_hist.csv", "w");
+	FILE* fptr = fopen("../matlab/data/control_hist.csv", "w");
 
 	if (fptr) {
 		for (size_t i = 0; i < timeframe.size(); ++i) {

@@ -30,7 +30,7 @@ const ex1::vec & ex1::control::getCoefs() const
 
 int ex1::control::num_coefs() const
 {
-	return 6;
+	return 4;
 }
 
 int ex1::control::size_u() const
