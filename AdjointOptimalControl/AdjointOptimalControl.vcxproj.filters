@@ -17,6 +17,18 @@
     <ClCompile Include="ex1_integralcost.cpp">
       <Filter>adjoint_optimal_control\example1</Filter>
     </ClCompile>
+    <ClCompile Include="ex2_control.cpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClCompile>
+    <ClCompile Include="ex2_dynamics.cpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClCompile>
+    <ClCompile Include="ex2_finalcost.cpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClCompile>
+    <ClCompile Include="ex2_integralcost.cpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="adjoint_optimal_control">
@@ -24,6 +36,9 @@
     </Filter>
     <Filter Include="adjoint_optimal_control\example1">
       <UniqueIdentifier>{6f0cd17d-55c4-4b49-a2c1-c18e648df75f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adjoint_optimal_control\example2">
+      <UniqueIdentifier>{2e98fe90-9e39-4e48-a382-2c474affab91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +62,21 @@
     </ClInclude>
     <ClInclude Include="ex1_integralcost.hpp">
       <Filter>adjoint_optimal_control\example1</Filter>
+    </ClInclude>
+    <ClInclude Include="example2.hpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClInclude>
+    <ClInclude Include="ex2_control.hpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClInclude>
+    <ClInclude Include="ex2_dynamics.hpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClInclude>
+    <ClInclude Include="ex2_finalcost.hpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
+    </ClInclude>
+    <ClInclude Include="ex2_integralcost.hpp">
+      <Filter>adjoint_optimal_control\example2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -51,7 +51,7 @@ namespace opt {
 		template<class IC, class F>
 		inline void Hamiltonian<IC, F>::grad_u(const double & t, const vec & x, const vec & u, const vec & lambda, vec & Hgrad_u)
 		{
-			static vec fgrad_u(f.size_u(), 0.0);
+			static vec fgrad_u(f.size_x(), 0.0);
 			double dyn_term = 0.0;
 			for (int i = 0; i < f.size_u(); ++i) {
 				f.grad_u(t, x, u, i, fgrad_u);

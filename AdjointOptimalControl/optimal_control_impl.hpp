@@ -17,6 +17,9 @@ namespace opt {
 		template<class Hamiltonian, class FinalCost, class Control>
 		inline void adjoint<Hamiltonian, FinalCost, Control>::setSimVars(double t0_, double tf_, const vec & x0, int Nt_)
 		{
+			// assign time span to controller, in case it can benefit from data
+			U.setTimeFrame(t0_, tf_, Nt_);
+
 			// init time stuff
 			t0 = t0_; tf = tf_; Nt = Nt_;
 			if (time.size() != Nt) { time.resize(Nt); }
@@ -154,6 +157,7 @@ namespace opt {
 					hgradu_o[i] = Hgrad_u[i];
 					coef_o[i] = coefs[i];
 				}
+				if (delta == 0.0 ) { delta = 1e-10; }
 				step_size /= delta;
 
 				// update coefficients

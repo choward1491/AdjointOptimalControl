@@ -116,6 +116,10 @@
     <ClCompile Include="ex1_dynamics.cpp" />
     <ClCompile Include="ex1_finalcost.cpp" />
     <ClCompile Include="ex1_integralcost.cpp" />
+    <ClCompile Include="ex2_control.cpp" />
+    <ClCompile Include="ex2_dynamics.cpp" />
+    <ClCompile Include="ex2_finalcost.cpp" />
+    <ClCompile Include="ex2_integralcost.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="optimal_control_impl.hpp" />
   </ItemGroup>
@@ -124,7 +128,12 @@
     <ClInclude Include="ex1_finalcost.hpp" />
     <ClInclude Include="ex1_dynamics.hpp" />
     <ClInclude Include="ex1_integralcost.hpp" />
+    <ClInclude Include="ex2_control.hpp" />
+    <ClInclude Include="ex2_dynamics.hpp" />
+    <ClInclude Include="ex2_finalcost.hpp" />
+    <ClInclude Include="ex2_integralcost.hpp" />
     <ClInclude Include="example1.hpp" />
+    <ClInclude Include="example2.hpp" />
     <ClInclude Include="Hamiltonian.hpp" />
     <ClInclude Include="optimal_control.hpp" />
   </ItemGroup>

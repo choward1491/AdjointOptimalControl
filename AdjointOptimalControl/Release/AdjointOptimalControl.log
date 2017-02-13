@@ -1,8 +1,8 @@
 ﻿  main.cpp
   Generating code
-  4 of 223 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
+  2 of 224 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    14 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   AdjointOptimalControl.vcxproj -> C:\Users\howar\OneDrive\Documents\codes\cpp\AdjointOptimalControl\Release\AdjointOptimalControl.exe
   AdjointOptimalControl.vcxproj -> C:\Users\howar\OneDrive\Documents\codes\cpp\AdjointOptimalControl\Release\AdjointOptimalControl.pdb (Full PDB)

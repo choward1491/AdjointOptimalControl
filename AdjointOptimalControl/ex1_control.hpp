@@ -12,6 +12,7 @@ namespace ex1 {
 		~control() = default;
 
 		void init();
+		void setTimeFrame(const double & t0_, const double & tf_, int Nt_);
 		void getControl(const double & t, const vec & x, vec & u);
 		vec & getCoefs();
 		const vec & getCoefs() const;
@@ -20,6 +21,7 @@ namespace ex1 {
 		void includeJacobian(const double & t, const vec & x, const vec & u, const vec & gradu, vec & gradu_coef);
 
 	private:
+		double t0, tf;
 		vec coefs;
 		double basis(const double & t, int idx);
 	};

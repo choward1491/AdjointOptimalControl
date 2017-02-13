@@ -9,6 +9,12 @@ void ex1::control::init()
 	std::fill(coefs.begin(), coefs.end(), 0.0);
 }
 
+void ex1::control::setTimeFrame(const double & t0_, const double & tf_, int Nt_)
+{
+	t0 = t0_;
+	tf = tf_;
+}
+
 void ex1::control::getControl(const double & t, const vec & x, vec & u)
 {
 	u[0] = 0.0;
@@ -30,7 +36,7 @@ const ex1::vec & ex1::control::getCoefs() const
 
 int ex1::control::num_coefs() const
 {
-	return 4;
+	return 2;
 }
 
 int ex1::control::size_u() const
@@ -47,7 +53,7 @@ void ex1::control::includeJacobian(const double & t, const vec & x, const vec & 
 
 double ex1::control::basis(const double & t, int idx)
 {
-	const double s = t*1e-0;
+	const double s = (tf - t) / (tf - t0);
 	const double s2 = s*s;
 	const double s4 = s2*s2;
 	switch (idx) {
@@ -59,4 +65,14 @@ double ex1::control::basis(const double & t, int idx)
 	case 6:		return s4*s2;
 	default:	return 1.0;
 	}
+
+	/* // RBF approach .. doesn't do too great
+	const double s = t / (tf - t0);
+	const double sigma = 1.0 / static_cast<double>(num_coefs() - 1);
+	const double ds = 1.0 / static_cast<double>(num_coefs() - 1);
+	const double center = idx*ds;
+	const double sn = (s - center) / sigma;
+	return exp(-sn*sn);
+	*/
+	
 }
