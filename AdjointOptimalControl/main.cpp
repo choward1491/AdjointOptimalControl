@@ -28,14 +28,14 @@ int main(int argc, char** argv) {
 	*/
 
 	opt::control::vec x0(4, 0.0);
-	x0[0] = -3000; x0[1] = 3000;
-	x0[2] = 150; x0[3] = 0.0;
+	x0[0] = -10000; x0[1] = 5000;
+	x0[2] = 150; x0[3] = -20.0;
 
 	opt_adjoint2 oa2;
 	oa2.setIterationStepsize(1e-5);
 	oa2.setMomentumCoefficient(0.9);
-	oa2.setNumIterations(100);
-	oa2.setSimVars(0.0, 30.0, x0, 100);
+	oa2.setNumIterations(1000);
+	oa2.setSimVars(0.0, 50.0, x0, 1000);
 	oa2.solve();
 	saveControlHistory2(oa2.U, oa2.getTimeframe());
 
@@ -69,7 +69,8 @@ void saveControlHistory2(ex2::control & U, const opt::control::vec & timeframe)
 		for (size_t i = 0; i < timeframe.size(); ++i) {
 			const double & t = timeframe[i];
 			U.getControl(t, x, u);
-			fprintf(fptr, "%lf, %lf, %lf\n", t, u[0],u[1]);
+			//fprintf(fptr, "%lf, %lf, %lf\n", t, u[0],u[1]);
+			fprintf(fptr, "%lf, %lf\n", t, u[0]);
 		}
 		fclose(fptr); fptr = nullptr;
 	}

@@ -79,7 +79,8 @@ namespace opt {
 				computeOverallGradH_u();	// compute overall Hgrad_u, taking into account control basis
 				updateControlCoefs(iter);		// update the coefficients used in control basis representation
 			}
-
+			//int end = Nt - 1;
+			//printf("Final State = [%lf, %lf, %lf, %lf]\n", state_h[end][0], state_h[end][1], state_h[end][2], state_h[end][3]);
 		}
 
 		template<class Hamiltonian, class FinalCost, class Control>

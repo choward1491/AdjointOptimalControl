@@ -17,14 +17,14 @@ void ex2::control::setTimeFrame(const double & t0_, const double & tf_, int Nt_)
 
 void ex2::control::getControl(const double & t, const vec & x, vec & u)
 {
-	int nhalf = num_coefs() / 2;
-	u[0] = u[1] = 0.0;
+	int nhalf = num_coefs() ;
+	u[0] = 0.0; // u[1] = 0.0;
 	for (int i = 0; i < nhalf; ++i) {
 		u[0] += coefs[i] * basis(t, i);
 	}
-	for (int i = 0; i < nhalf; ++i) {
+	/*for (int i = 0; i < nhalf; ++i) {
 		u[1] += coefs[i+nhalf] * basis(t, i);
-	}
+	}*/
 
 }
 
@@ -45,18 +45,18 @@ int ex2::control::num_coefs() const
 
 int ex2::control::size_u() const
 {
-	return 2;
+	return 1;
 }
 
 void ex2::control::includeJacobian(const double & t, const vec & x, const vec & u, const vec & gradu, vec & gradu_coef)
 {
-	const int nhalf = num_coefs() / 2;
+	const int nhalf = num_coefs();
 	for (int i = 0; i < nhalf; ++i) {
 		gradu_coef[i] = gradu[0] * basis(t, i);
 	}
-	for (int i = 0; i < nhalf; ++i) {
+	/*for (int i = 0; i < nhalf; ++i) {
 		gradu_coef[i+nhalf] = gradu[1] * basis(t, i);
-	}
+	}*/
 }
 
 double ex2::control::basis(const double & t, int idx)
