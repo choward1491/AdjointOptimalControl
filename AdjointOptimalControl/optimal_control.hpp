@@ -51,7 +51,7 @@ namespace opt {
 			std::vector<vec> adjoint_h;
 			std::vector<vec> state_h;
 			vec time;
-			vec u, tmpx, tmpu, tmpl, Hgrad_u, momentum;
+			vec u, tmpx, tmpu, tmpl, Hgrad_u, momentum, bcoefs;
 			int Nt, num_iters;
 			double t0, tf, step_size, mom_coef;
 

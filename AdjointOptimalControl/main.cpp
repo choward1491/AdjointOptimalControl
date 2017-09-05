@@ -29,13 +29,13 @@ int main(int argc, char** argv) {
 
 	opt::control::vec x0(4, 0.0);
 	x0[0] = -10000; x0[1] = 5000;
-	x0[2] = 150; x0[3] = -20.0;
+	x0[2] = 180; x0[3] = 0.0;
 
 	opt_adjoint2 oa2;
-	oa2.setIterationStepsize(1e-5);
+	oa2.setIterationStepsize(1e-7);
 	oa2.setMomentumCoefficient(0.9);
-	oa2.setNumIterations(1000);
-	oa2.setSimVars(0.0, 50.0, x0, 1000);
+	oa2.setNumIterations(50000);
+	oa2.setSimVars(0.0, 40.0, x0, 1000);
 	oa2.solve();
 	saveControlHistory2(oa2.U, oa2.getTimeframe());
 

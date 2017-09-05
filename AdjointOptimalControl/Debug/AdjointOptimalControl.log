@@ -1,15 +1,3 @@
-﻿  optimal_control_impl.hpp
-  main.cpp
-  ex2_integralcost.cpp
-  ex2_finalcost.cpp
-  ex2_dynamics.cpp
-  ex2_control.cpp
-  ex1_integralcost.cpp
-  ex1_finalcost.cpp
-  ex1_dynamics.cpp
-  ex1_control.cpp
-  Generating Code...
-c:\users\howar\onedrive\documents\codes\cpp\adjointoptimalcontrol\adjointoptimalcontrol\ex2_integralcost.cpp(24): warning C4715: 'ex2::IntegralCost::grad_x': not all control paths return a value
-c:\users\howar\onedrive\documents\codes\cpp\adjointoptimalcontrol\adjointoptimalcontrol\ex2_integralcost.cpp(14): warning C4715: 'ex2::IntegralCost::grad_u': not all control paths return a value
+﻿  ex2_dynamics.cpp
   AdjointOptimalControl.vcxproj -> C:\Users\howar\OneDrive\Documents\codes\cpp\AdjointOptimalControl\Debug\AdjointOptimalControl.exe
   AdjointOptimalControl.vcxproj -> C:\Users\howar\OneDrive\Documents\codes\cpp\AdjointOptimalControl\Debug\AdjointOptimalControl.pdb (Partial PDB)

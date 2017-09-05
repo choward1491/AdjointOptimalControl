@@ -8,7 +8,7 @@ u_approx = u_hist(:,2);
 dt = time(2)-time(1);
 
 state = zeros(4,length(time));
-state(:,1) = [-10000;5000;150;-20];
+state(:,1) = [-10000;5000;180;0];
 
 for i = 2:length(time)
    t = time(i-1);

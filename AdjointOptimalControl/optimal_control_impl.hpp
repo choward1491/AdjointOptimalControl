@@ -10,7 +10,7 @@ namespace opt {
 		inline adjoint<Hamiltonian, FinalCost, Control>::adjoint():tmpx(H.f.size_x(),0.0),
 			tmpu(H.f.size_u(),0.0),tmpl(H.f.size_x(),0.0), momentum(U.num_coefs(),0.0),
 			Hgrad_u(U.num_coefs()),u(H.f.size_u(),0.0),Nt(0),t0(0),tf(0),mom_coef(0.9),
-			coef_o(U.num_coefs(),0.0), hgradu_o(U.num_coefs(),0.0)
+			coef_o(U.num_coefs(),0.0), hgradu_o(U.num_coefs(),0.0),bcoefs(U.num_coefs(),0.0)
 		{
 		}
 
@@ -70,17 +70,32 @@ namespace opt {
 		template<class Hamiltonian, class FinalCost, class Control>
 		inline void adjoint<Hamiltonian, FinalCost, Control>::solve()
 		{
+			double cost = 0, bcost = 1e100;
 			U.init(); // init controller
 
 			// do forward-backward-sweep iterative algorithm
 			for (int iter = 0; iter < num_iters; ++iter) {
 				computeStateHistory();		// compute x_{i} \forall i
+				cost = Psi(time[Nt - 1], state_h[Nt - 1]);
+				if (cost < bcost) {
+					bcost = cost;
+					vec & coefs_ = U.getCoefs();
+					for (int i = 0; i < U.num_coefs(); ++i) {
+						bcoefs[i] = coefs_[i];
+					}
+				}
 				computeAdjointHistory();	// compute \lambda_{i} \forall i
 				computeOverallGradH_u();	// compute overall Hgrad_u, taking into account control basis
 				updateControlCoefs(iter);		// update the coefficients used in control basis representation
 			}
-			//int end = Nt - 1;
-			//printf("Final State = [%lf, %lf, %lf, %lf]\n", state_h[end][0], state_h[end][1], state_h[end][2], state_h[end][3]);
+
+			vec & coefs_ = U.getCoefs();
+			for (int i = 0; i < U.num_coefs(); ++i) {
+				coefs_[i] = bcoefs[i];
+			}
+			computeStateHistory();
+			int end = Nt - 1;
+			printf("Final State = [%lf, %lf, %lf, %lf]\n", state_h[end][0], state_h[end][1], state_h[end][2], state_h[end][3]);
 		}
 
 		template<class Hamiltonian, class FinalCost, class Control>
